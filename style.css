@@ -1,0 +1,300 @@
+:root {
+    /* Variables Globales */
+    --color-gris-nieve: #fcfcfc;
+    --color-gris-muy-claro: #f0f0f0;
+    --color-gris-claro: #e7e7e7;
+    --color-gris-medio: #cccccc;
+    --color-gris-oscuro: #666666;
+    --color-gris-muy-oscuro: #333333;
+    --color-blanco: #ffffff;
+    --color-azul-base: #3498db;
+    --sombra-base: rgba(0, 0, 0, 0.1);
+
+    /* Variables Semánticas */
+    --fondo-cuerpo: var(--color-gris-claro);
+    --texto-principal: var(--color-azul-base);
+    --texto-secundario: var(--color-gris-oscuro);
+    --fondo-cabecera: var(--color-gris-nieve);
+    --fondo-navegacion: var(--color-blanco);
+    --borde-navegacion: var(--color-gris-medio);
+    --fondo-navegacion-hover: var(--color-gris-muy-claro);
+    --fondo-caja: var(--color-blanco);
+    --sombra-caja: var(--sombra-base);
+}
+
+
+
+body {
+    background-color: var(--fondo-cuerpo);
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--texto-principal);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--fondo-cabecera);
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 0.125rem 0.5rem var(--borde-navegacion);
+}
+
+#logo {
+    height: 5em;
+    width: auto;
+}
+
+.contenedor-principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+
+/* Contenedor para las fotos de ejemplo. 
+   Usamos flexbox en columna para móviles (una debajo de la otra)
+   y un pequeño hueco (gap) entre ellas para que respiren. */
+.imagenes-demostracion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    max-width: 90vw;
+    margin: 0 auto 3rem auto;
+}
+
+/* Ocupan todo el ancho, pero las rematamos con object-fit para que no se deformen,
+   y les damos un alto máximo para que no molesten mucho al hacer scroll */
+.imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 1em;
+    box-shadow: 0 0.2rem 0.6rem var(--sombra-caja);
+    object-fit: cover;
+    max-height: 300px;
+}
+
+nav {
+    background-color: var(--fondo-navegacion);
+    width: 100%;
+    /* Sticky ancla el nav abajo, pero al llegar al final de su contenedor padre se suelta, revelando el footer */
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    width: 25%;
+    text-align: center;
+    border-top: 0.1rem solid var(--borde-navegacion);
+    border-bottom: 0.1rem solid var(--borde-navegacion);
+}
+
+nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+    padding: 0.8em 0;
+    color: var(--texto-principal);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+nav a span {
+    font-size: 1.5em;
+}
+
+nav a:hover {
+    background-color: var(--fondo-navegacion-hover);
+}
+
+footer {
+    background-color: var(--fondo-cabecera);
+    color: var(--texto-principal);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 0.1rem solid var(--borde-navegacion);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-contenido p {
+    margin: 0.3rem 0;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+.footer-legal p {
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+    opacity: 0.7;
+    margin: 0;
+}
+
+/* Grid Layout */
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+    max-width: 90vw;
+    margin: 0 auto 4rem auto;
+}
+
+.caja-grid {
+    background-color: var(--fondo-caja);
+    border-radius: 1em;
+    padding: 1.5em;
+    box-shadow: 0 0.2rem 0.6rem var(--sombra-caja);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*El efecto de subir y la sombra*/
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.caja-grid:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1rem var(--sombra-caja);
+}
+
+.caja-grid span {
+    font-size: 2.5em;
+}
+
+.caja-grid h3 {
+    margin: 0;
+    color: var(--texto-principal);
+    font-size: 1.25em;
+}
+
+.caja-grid p {
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: 0.875em;
+}
+
+.caja-grid .info-extra {
+    display: block;
+    margin-top: 0.5em;
+    color: var(--texto-principal);
+    font-size: 0.85em;
+    font-weight: normal;
+}
+
+/* Modo Oscuro*/
+
+/*Oculta el checkbox*/
+.interruptor-tema {
+    display: none;
+}
+
+/*posicion del interruptor*/
+.etiqueta-interruptor-tema {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--fondo-caja);
+    color: var(--texto-principal);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.2rem 0.6rem var(--sombra-caja);
+    cursor: pointer;
+    z-index: 150;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    user-select: none;
+}
+
+.etiqueta-interruptor-tema:hover {
+    transform: scale(1.1);
+}
+
+
+/*Muestra la luna y oculta el sol*/
+.etiqueta-interruptor-tema .icono-luna {
+    display: block;
+}
+
+.etiqueta-interruptor-tema .icono-sol {
+    display: none;
+}
+
+/*Si está marcado, oculta la luna*/
+body:has(.interruptor-tema:checked) .etiqueta-interruptor-tema .icono-luna {
+    display: none;
+}
+
+body:has(.interruptor-tema:checked) .etiqueta-interruptor-tema .icono-sol {
+    display: block;
+}
+
+
+/*Cambia los colores*/
+/*El has detecta si el checkbox está marcado*/
+body:has(.interruptor-tema:checked) {
+    --fondo-cuerpo: #0f172a;
+    --texto-principal: #22d3ee;
+    --texto-secundario: #94a3b8;
+    --fondo-cabecera: #1e293b;
+    --fondo-navegacion: #0f172a;
+    --borde-navegacion: #334155;
+    --fondo-navegacion-hover: #334155;
+    --fondo-caja: #1e293b;
+    --sombra-caja: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (min-width: 48rem) {
+    #logo {
+        height: 8em;
+    }
+
+    /* En ordenadores y pantallas grandes las configuramos en fila (una al lado de otra).
+       Replicamos los 10rem de margen lateral que tiene la cuadrícula (grid) para que quede bien alineado con lo de abajo. */
+    .imagenes-demostracion {
+        flex-direction: row;
+        margin: 0 10rem 4rem 10rem;
+        max-width: none;
+        padding: 0;
+    }
+
+    /* Le calculamos exactamente la mitad de espacio menos la mitad del gap para no salirnos de los márgenes */
+    .imagen {
+        width: calc(50% - 0.75rem);
+        max-height: 400px;
+    }
+
+    .contenedor-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        margin: 0 10rem 10rem 10rem;
+    }
+}
+
+/*AVISO, SE HA USADO IA, AQUI SU USO:
+UIILIZACION DE EMOJIS
+STICKY PARA EL MENU (NAV) (QUERIA HACER QUE CUANDO SUPERARA LAS MEDIA QUERY SE QUEDARA ARRIBA DEL TODO PERO ME DABA CODIGO QUE NO ENTENDIA)
+CONEXION DE TIPOGRAFIAS (ME AHORRABA TIEMPO, SE LA PIDO Y LA CONECTA)
+Y EL CHECKED, NO SABIA HACER INVISIBLE EL CHECKBOX Y QUE SE MOVIERA EL SOL Y LA LUNA (POR HACERLO BONITO)
+Y cosas puntuales sobre organizacion*/
