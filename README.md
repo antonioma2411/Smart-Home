@@ -22,15 +22,12 @@ El objetivo de este proyecto es ofrecer una interfaz minimalista pero potente do
 ### 🌗 Control de Tema Manual (Boton)
 La interfaz incluye un botón dedicado que permite al usuario alternar instantáneamente entre el modo claro y el oscuro. El tema seleccionado se aplica globalmente y la transición es suave para evitar la fatiga visual.
 
-### 💾 Persistencia de Preferencias (LocalStorage)
-El tema seleccionado por el usuario se guarda en el almacenamiento local del navegador (`localStorage`). Esto significa que si el usuario elige el Modo Oscuro, la página lo recordará incluso después de cerrarla o recargarla, proporcionando una experiencia consistente.
 
 ### 📱 Diseño "Mobile-First"
 La interfaz ha sido construida bajo la metodología *Mobile-First*, asegurando que la experiencia en un panel de pared (tablet) o un smartphone sea tan fluida como en un ordenador de escritorio.
 
 ### ⚡ Rendimiento Óptimo
 * **Zero dependencias de frameworks:** No usa Bootstrap ni frameworks pesados.
-* **Iconografía SVG:** Todos los iconos son vectores ligeros que no pixelan y cargan instantáneamente.
 * **Animaciones no intrusivas:** Micro-interacciones en los botones para dar feedback táctil al usuario.
 
 ---
@@ -42,10 +39,13 @@ La interfaz ha sido construida bajo la metodología *Mobile-First*, asegurando q
 | **HTML5** | Estructura semántica (Header, Main, Section). |
 | **CSS3 (Grid/Flex)** | Maquetación responsiva y alineación de dispositivos. |
 | **Custom Properties** | Gestión de temas y colores dinámicos. |
-| **JavaScript** | Lógica para el cambio de tema y persistencia. |
 | **Google Fonts** | Tipografía 'Inter' para máxima legibilidad. |
 
 ---
+
+
+###FIGMA: https://www.figma.com/site/un902PjWAHiBeNSraeI6lo/Domus-Connect?node-id=0-1&p=f&t=nQTGBQzCh7ddJWR1-0
+
 
 ## 🌓 Lógica del Sistema de Temas
 
@@ -71,4 +71,3 @@ Aquí un ejemplo de cómo se gestiona la paleta de colores:
     --shadow: rgba(0, 0, 0, 0.5);
 }
 
-###FIGMA: https://www.figma.com/site/un902PjWAHiBeNSraeI6lo/Domus-Connect?node-id=0-1&p=f&t=nQTGBQzCh7ddJWR1-0
