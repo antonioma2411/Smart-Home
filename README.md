@@ -62,3 +62,5 @@ El núcleo del modo oscuro reside en el uso estratégico de `:root`. Aquí un ej
         --shadow: rgba(0, 0, 0, 0.5);
     }
 }
+
+###FIGMA: https://www.figma.com/site/un902PjWAHiBeNSraeI6lo/Domus-Connect?node-id=0-1&p=f&t=nQTGBQzCh7ddJWR1-0
