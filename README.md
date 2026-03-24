@@ -55,7 +55,6 @@ El núcleo del modo oscuro reside en el uso estratégico de `:root`. Aquí un ej
 }
 
 /* Adaptación automática a Dark Mode */
-@media (prefers-color-scheme: dark) {
     :root {
         --primary-bg: #0B1437;
         --card-bg: #111C44;
