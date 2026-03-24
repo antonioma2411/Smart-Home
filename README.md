@@ -44,7 +44,7 @@ La interfaz ha sido construida bajo la metodología *Mobile-First*, asegurando q
 ---
 
 
-###FIGMA: https://www.figma.com/site/un902PjWAHiBeNSraeI6lo/Domus-Connect?node-id=0-1&p=f&t=nQTGBQzCh7ddJWR1-0
+### FIGMA: https://www.figma.com/site/un902PjWAHiBeNSraeI6lo/Domus-Connect?node-id=0-1&p=f&t=nQTGBQzCh7ddJWR1-0
 
 
 ## 🌓 Lógica del Sistema de Temas
